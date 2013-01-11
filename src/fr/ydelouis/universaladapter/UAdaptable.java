@@ -1,8 +1,8 @@
 package fr.ydelouis.universaladapter;
 
 
-public interface UAdaptable<T, U extends UAdaptable<T, U>>
+public interface UAdaptable<I, V extends UAdaptable<I, V>>
 {
-	public void bind(int position, T item);
-	public U newInstance();
+	public void bind(int position, I item);
+	public V newInstance();
 }
