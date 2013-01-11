@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-public class URelativeLayout<T> extends RelativeLayout implements UAdaptable<T, URelativeLayout<T>>
+public class URelativeLayout<I> extends RelativeLayout implements UAdaptable<I, URelativeLayout<I>>
 {
 	private int layoutId;
 	
@@ -19,10 +19,10 @@ public class URelativeLayout<T> extends RelativeLayout implements UAdaptable<T, 
 	}
 	
 	@Override
-	public URelativeLayout<T> newInstance() {
-		return new URelativeLayout<T>(getContext(), layoutId);
+	public URelativeLayout<I> newInstance() {
+		return new URelativeLayout<I>(getContext(), layoutId);
 	}
 
 	@Override
-	public void bind(int position, T item) {}
+	public void bind(int position, I item) {}
 }
