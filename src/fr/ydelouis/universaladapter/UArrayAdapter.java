@@ -7,16 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-public class UArrayAdapter<T, U extends View & UAdaptable<T, U>> extends ArrayAdapter<T>
+public class UArrayAdapter<I, V extends View & UAdaptable<I, V>> extends ArrayAdapter<I>
 {
-	private U example;
+	private V example;
 
-	public UArrayAdapter(Context context, T[] data, U example) {
+	public UArrayAdapter(Context context, I[] data, V example) {
 		super(context, 0, data);
 		this.example = example;
 	}
 	
-	public UArrayAdapter(Context context, List<T> data, U example) {
+	public UArrayAdapter(Context context, List<I> data, V example) {
 		super(context, 0, data);
 		this.example = example;
 	}
@@ -24,10 +24,10 @@ public class UArrayAdapter<T, U extends View & UAdaptable<T, U>> extends ArrayAd
 	@SuppressWarnings("unchecked")
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
-		if(view == null)
+		if(view == null || !(view instanceof V))
 			view = example.newInstance();
 		
-		((U) view).bind(position, getItem(position));
+		((V) view).bind(position, getItem(position));
 		return view;
 	}
 }
