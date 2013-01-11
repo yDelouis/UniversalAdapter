@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class ULinearLayout<T> extends LinearLayout implements UAdaptable<T, ULinearLayout<T>>
+public class ULinearLayout<I> extends LinearLayout implements UAdaptable<I, ULinearLayout<I>>
 {
 	private int layoutId;
 	
@@ -19,10 +19,10 @@ public class ULinearLayout<T> extends LinearLayout implements UAdaptable<T, ULin
 	}
 	
 	@Override
-	public ULinearLayout<T> newInstance() {
-		return new ULinearLayout<T>(getContext(), layoutId);
+	public ULinearLayout<I> newInstance() {
+		return new ULinearLayout<I>(getContext(), layoutId);
 	}
 
 	@Override
-	public void bind(int position, T item) {}
+	public void bind(int position, I item) {}
 }
