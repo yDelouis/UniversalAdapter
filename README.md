@@ -48,7 +48,6 @@ Example :
             return new MyItemView(getContext());
         }
     }
-    
 ```
 
 2. The `Activity`/`Fragment` (`ctx` represents the `Context`)
