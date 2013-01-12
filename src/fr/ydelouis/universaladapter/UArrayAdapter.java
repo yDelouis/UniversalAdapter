@@ -24,7 +24,7 @@ public class UArrayAdapter<I, V extends View & UAdaptable<I, V>> extends ArrayAd
 	@SuppressWarnings("unchecked")
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
-		if(view == null || !(view instanceof V))
+		if(view == null || !example.getClass().equals(view.getClass()))
 			view = example.newInstance();
 		
 		((V) view).bind(position, getItem(position));
