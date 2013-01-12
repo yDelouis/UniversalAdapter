@@ -1,7 +1,7 @@
 UniversalAdapter
 ================
 
-This small library aims to prevent Android developpers to write the same boring code for Adapters again and again.<br />
+This small library aims to prevent Android developpers from writing the same boring code for Adapters again and again.<br />
 Indeed, for Adapters, Google suggest to use the ViewHolder pattern which leads to a very ugly code and a non reusable View.<br /><br />
 This library proposes to change the goal of the Adapter. It's no longer a object which builds a View and set the data of the item in the View (calling setText(), setImage(), etc...). But it's a object which choose a View corresponding to an item and the View itself is responsible for binding the data of the item.<br /><br />
 So you have an Adapter which do usually the same thing, so it can be written once (in the library) and used for many items and views. And you have some reusable Views which can be used for the adapter and in other parts of your application.
