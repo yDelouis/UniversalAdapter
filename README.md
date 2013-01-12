@@ -20,37 +20,41 @@ Example :
 ---------
 1. The `View` which shows an instance of `MyItem`
 ```java
-public class MyItemView extends LinearLayout implements UAdaptable<MyItem, UMyItemView>
-{
-  private TextView	text;
-	private ImageView	image;
-	
-	public MyItemView(Context context) {
-		super(context);
-		init();
-	}
-	
-	private void init() {
-		View.inflate(getContext(), R.layout.myitemview, this);
-		text = (TextView) findViewById(R.id.myitemview_text);
-		image = (ImageView) findViewById(R.id.myitemview_image);
-	}
 
-	@Override
-	public void bind(int position, MyItem item) {
-		text.setText(item.getText());
-		image.setImageResource(item.getImageResource());
-	}
-
-	@Override
-	public MyItemView newInstance() {
-		return new MyItemView(getContext());
-	}
-}
+    public class MyItemView extends LinearLayout implements UAdaptable<MyItem, UMyItemView>
+    {
+        private TextView  text;
+        private ImageView image;
+    
+        public MyItemView(Context context) {
+            super(context);
+            init();
+        }
+    
+        private void init() {
+            View.inflate(getContext(), R.layout.myitemview, this);
+            text = (TextView) findViewById(R.id.myitemview_text);
+            image = (ImageView) findViewById(R.id.myitemview_image);
+        }
+    
+        @Override
+        public void bind(int position, MyItem item) {
+            text.setText(item.getText());
+            image.setImageResource(item.getImageResource());
+        }
+    
+        @Override
+        public MyItemView newInstance() {
+            return new MyItemView(getContext());
+        }
+    }
+    
 ```
 
 2. The `Activity`/`Fragment` (`ctx` represents the `Context`)
 ```java
-UArrayAdapter<MyItem, MyItemView> adapter = new UArrayAdapter<MyItem, MyItemView>(ctx, items, new MyItemView(ctx));
-listView.setAdapter(adapter);
+
+    UArrayAdapter<MyItem, MyItemView> adapter = new UArrayAdapter<MyItem, MyItemView>(ctx, items, new MyItemView(ctx));
+    listView.setAdapter(adapter);
+    
 ``` 
