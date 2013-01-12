@@ -49,7 +49,7 @@ public class MyItemView extends LinearLayout implements UAdaptable<MyItem, UMyIt
 }
 ```
 
-2. The `Activity`/`Fragment` (named ctx in the code)
+2. The `Activity`/`Fragment` (`ctx` represents the `Context`)
 ```java
 UArrayAdapter<MyItem, MyItemView> adapter = new UArrayAdapter<MyItem, MyItemView>(ctx, items, new MyItemView(ctx));
 listView.setAdapter(adapter);
