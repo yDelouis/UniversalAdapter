@@ -21,7 +21,7 @@ Example :
 1. The `View` which shows an instance of `MyItem`
 ```java
 
-    public class MyItemView extends LinearLayout implements UAdaptable<MyItem, UMyItemView>
+    public class MyItemView extends LinearLayout implements UAdaptable<MyItem, MyItemView>
     {
         private TextView  text;
         private ImageView image;
