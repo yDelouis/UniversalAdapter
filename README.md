@@ -38,7 +38,7 @@ Example :
         }
     
         @Override
-        public void bind(int position, MyItem item) {
+        public void bind(int position, MyItem item, Adapter adapter) {
             text.setText(item.getText());
             image.setImageResource(item.getImageResource());
         }
