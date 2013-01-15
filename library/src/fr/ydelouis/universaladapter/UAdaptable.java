@@ -1,5 +1,7 @@
 package fr.ydelouis.universaladapter;
 
+import android.widget.Adapter;
+
 /**
  * Interface implemented by a View which shows an item
  * in a ListView or a GridVIew
@@ -11,6 +13,6 @@ package fr.ydelouis.universaladapter;
  */
 public interface UAdaptable<I, V extends UAdaptable<I, V>>
 {
-	public void bind(int position, I item);
+	public void bind(int position, I item, Adapter adapter);
 	public V newInstance();
 }

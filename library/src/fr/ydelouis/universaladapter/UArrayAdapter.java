@@ -27,7 +27,7 @@ public class UArrayAdapter<I, V extends View & UAdaptable<I, V>> extends ArrayAd
 		if(view == null || !example.getClass().equals(view.getClass()))
 			view = example.newInstance();
 		
-		((V) view).bind(position, getItem(position));
+		((V) view).bind(position, getItem(position), this);
 		return view;
 	}
 }

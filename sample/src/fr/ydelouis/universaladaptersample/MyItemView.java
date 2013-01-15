@@ -2,19 +2,20 @@ package fr.ydelouis.universaladaptersample;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import fr.ydelouis.universaladapter.UAdaptable;
 
-public class UMyItemView extends LinearLayout implements UAdaptable<String, UMyItemView>
+public class MyItemView extends LinearLayout implements UAdaptable<String, MyItemView>
 {
 	private TextView	text;
 	private ImageView	image1;
 	private ImageView	image2;
 	private int			nbImages;
 	
-	public UMyItemView(Context context) {
+	public MyItemView(Context context) {
 		super(context);
 		init();
 	}
@@ -28,14 +29,14 @@ public class UMyItemView extends LinearLayout implements UAdaptable<String, UMyI
 	}
 
 	@Override
-	public void bind(int position, String item) {
+	public void bind(int position, String item, Adapter adapter) {
 		text.setText(item);
 		image1.setImageResource(android.R.drawable.ic_menu_add + (position % nbImages));
 		image2.setImageResource(android.R.drawable.ic_menu_add + ((position + nbImages / 2) % nbImages));
 	}
 
 	@Override
-	public UMyItemView newInstance() {
-		return new UMyItemView(getContext());
+	public MyItemView newInstance() {
+		return new MyItemView(getContext());
 	}
 }

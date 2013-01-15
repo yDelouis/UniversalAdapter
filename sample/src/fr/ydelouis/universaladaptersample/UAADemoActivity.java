@@ -14,7 +14,7 @@ public class UAADemoActivity extends ListActivity
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(android.R.layout.list_content);
-		getListView().setAdapter(new UArrayAdapter<String, UMyItemView>(this, createData(), new UMyItemView(this)));
+		getListView().setAdapter(new UArrayAdapter<String, MyItemView>(this, createData(), new MyItemView(this)));
 	}
 
 	private List<String> createData() {
